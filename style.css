@@ -124,7 +124,10 @@ padding: 6rem 2rem; /*espaçamento interno da seção*/
 /* =============================================== Projetos ========================================================= */
 
 
-
+span{
+    color: var(--primaria);
+    font-weight: bold;
+}   
 .projetos-titulo{
     text-align: center; 
     font-size: 2.5rem;
