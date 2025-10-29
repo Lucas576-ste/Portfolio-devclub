@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>DevClub | Portfólio</title>
+</head>
+
+<body>
+  <div class="particulas"></div>
+
+  <nav class="navegacao">
+    <ul class="menu">
+      <li>
+        <a href="#inicio" class="menu-link">Início</a>
+      </li>
+      <li>
+        <a href="#sobre" class="menu-link">Sobre</a>
+      </li>
+      <li>
+        <a href="#projetos" class="menu-link">Projetos</a>
+      </li>
+      <li>
+        <a href="#contatos" class="menu-link">Contato</a>
+      </li>
+    </ul>
+  </nav>
+
+  <main id="inicio" class="cabecalho">
+    <img src="img/eu2.jpeg" alt="Foto de Lucas Menezes" class="foto-perfil" />
+    <h1>Lucas Menezes</h1>
+    <p class="cabecalho-sub-titulo">Desenvolvedor Front-End</p>
+  </main>
+
+  <section id="sobre" class="sobre">
+    <h2 class="sobre-titulo">Sobre Mim</h2>
+    <div class="sobre-caixa">
+      <p class="sobre-paragrafo">
+      <p>Sou desenvolvedor front-end focado em criar experiências digitais que unem design, funcionalidade e
+        performance.
+        Nos últimos anos, desenvolvi portfólios, landing pages e páginas iniciais de e-commerce, sempre priorizando
+        usabilidade, velocidade e adaptação a diferentes dispositivos. </p>
+      <br>
+      <p>Tenho experiência prática em projetos próprios e também em freelances, o que me proporcionou contato direto com
+        diferentes necessidades reais de clientes.
+        Atualmente, estou ampliando meus conhecimentos em JavaScript e explorando tecnologias como Node.js, TypeScript e
+        React, para oferecer soluções cada vez mais completas e modernas. </p>
+      <br>
+      <p>Transformar ideias em interfaces que geram impacto é o que move meu trabalho.</p>
+      </p>
+
+    </div>
+  </section>
+      <!-- ##########################################projetos######################################### -->
+
+
+  <section id="projetos" class="projetos">
+    <h2 class="projetos-titulo">Meus Projetos</h2>
+    <div class="projetos-caixa">
+      <!-- aqui comecam os projetos, os projetos ficam dentro dessa caixa-->
+
+      <div class="projetos-card">
+        <!-- caixa para a imagem doimagem do projeto-->
+        <img src="img/mm.PNG" alt="projeto 1" class="projetos-imagem" />
+        <a href=""></a>
+        <div class="caixa-textos-projeto">
+          <h3 class="info-projetos">E-commerce</h3>
+          <p class="paragrafo-projetos">
+            E-commerce desenvolvido com foco em usabilidade e design responsivo.
+
+          </p>
+          <a class="link-pag" href="https://lucas576-ste.github.io/Projeto-interface-ecommerce/"
+            class="botao-projeto">Ver mais...</a>
+        </div>
+        </div>
+
+        <!-- ################################################## -->
+
+      
+      <div class="projetos-card">
+        <!-- caixa para a imagem doimagem do projeto-->
+        <img src="./img/Capturar.PNG" alt="projeto 1" class="projetos-imagem" />
+
+        <div class="caixa-textos-projeto">
+          <h3 class="info-projetos">Conversor de Moedas</h3>
+          <p class="paragrafo-projetos">
+            Projeto em JavaScript que permite aos usuários converter valores entre diferentes moedas de forma rápida e
+            prática.
+          </p>
+          <a class="link-pag" href="https://lucas576-ste.github.io/conversor-de-moedas/" class="botao-projeto">Ver
+            mais...</a>
+
+        </div>
+      </div>
+
+        <!-- ################################################## -->
+
+
+      <div class="projetos-card">
+        <!-- caixa para a imagem doimagem do projeto-->
+        <img src="./img/timer.PNG" alt="projeto 1" class="projetos-imagem" />
+        <div class="caixa-textos-projeto">
+          <h3 class="info-projetos">Cronômetro</h3>
+          <p class="paragrafo-projetos">
+            Cronômetro desenvolvido em JavaScript com funcionalidades de iniciar, pausar e resetar o tempo.
+          </p>
+          <a class="link-pag" href="https://lucas576-ste.github.io/Cronometro/"
+            class="botao-projeto">Ver mais...</a>
+        </div>
+      </div>
+    
+
+      <!-- ################################################## -->
+
+       <div class="projetos-card">
+        <!-- caixa para a imagem doimagem do projeto-->
+        <img src="./img/sorteio.PNG" alt="projeto 1" class="projetos-imagem" />
+        <div class="caixa-textos-projeto">
+          <h3 class="info-projetos">Sorteador</h3>
+          <p class="paragrafo-projetos">
+            Cronômetro desenvolvido em JavaScript com funcionalidades de iniciar, pausar e resetar o tempo.
+          </p>
+          <a class="link-pag" href="https://lucas576-ste.github.io/Sorteador/"
+            class="botao-projeto">Ver mais...</a>
+        </div>
+      </div>
+    
+
+
+
+  </section>
+  <!-- ################################################################################################################### -->
+  <section id="contatos" class="contatos">
+    <h2 class="contatos-titulo">Contatos</h2>
+
+    <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+      <div class="grupo-form">
+        <input placeholder="Nome" class="campo-form" id="nome" />
+      </div>
+      <div class="grupo-form">
+        <textarea class="campo-form" placeholder="Digite sua mensagem" rows="5" id="mensagem"></textarea>
+      </div>
+      <button type="submit" class="botao-form">Enviar Mensagem</button>
+    </form>
+  </section>
+
+  <script>
+
+    function enviarWhats(event) { /*event representa o formulário*/
+      event.preventDefault() /*para evitar que o formulário seja enviado normalmente e recarregue a página*/
+
+
+
+
+      const nome = document.getElementById('nome').value;
+      const mensagem = document.getElementById('mensagem').value; /*getElementById pega o id do formulário*/
+      const telefone = '5561983780833'
+
+      const texto = `Olá, meu nome é ${nome}, ${mensagem}`;
+      const msgformatada = encodeURIComponent(texto); /*encodeURIComponent codifica o texto para ser usado em uma URL*/
+
+      const url = `https://wa.me/${telefone}?text=${msgformatada}`; /*aqui é a URL do WhatsApp com o número e a mensagem formatada*/
+
+      window.open(url, '_blank'); /*window.open abre a URL em uma nova aba*/
+    }
+  </script>
+</body>
+
+</html>

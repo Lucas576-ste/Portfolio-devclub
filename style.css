@@ -1,0 +1,259 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root {
+  --primaria: #4f46e5;
+  --secundaria: #7c3aed;
+  --escuro: #0f172a;
+  --maisEscuro: #0a0f1c;
+  --claro: #e2e8f0;
+  --vidro: rgba(255, 255, 255, 0.1);
+}
+
+body{
+    background-color: var(--escuro);
+    color: var(--claro);
+     overflow-x: hidden; /*para não deixar a barra de rolagem horizontal*/
+
+}
+
+/* ===================================== Barra de navegação========================================= */
+
+.navegacao{
+    position: fixed;
+    top: 0; /*para ficar no topo da tela*/
+    background: rgb(15, 23, 42, 0.8); /*rgb é para a barra ficar transaparente, e a alteração do mesmo é em (0.8)*/
+    width: 100%; /*vai ocupar 100% da tela*/
+    z-index: 100; /*para ficar acima de outros elementos*/
+    padding: 1.5rem; /*espaçamento interno para os itens não ficarem grudados  */
+
+}
+.menu{
+    display: flex;
+    list-style: none;
+    gap: 3rem; /*espaçamento entre os itens do menu*/
+    justify-content: center; /*para centralizar os itens do menu*/  
+}
+
+
+ .menu-link{
+    text-decoration: none; 
+    color : var(--claro); 
+    font-weight: 500; /*para deixar o texto mais grosso*/
+    position: relative; /*para colocar o cursor do mouse sobre o link*/
+    padding: 0.5rem 0; /*espaçamento interno para o link*/
+}
+
+.menu-link::after{
+    content: '';
+    height: 2px; /*altura da linha*/
+    width: 0; /*largura inicial da linha*/
+    position: absolute; /*para posicionar a linha em relação ao link*/
+    bottom: 0; /*para ficar na parte de baixo do link*/
+    left: 0; /*para ficar na parte de esquerda do link*/
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria)); /*para fazer o gradiente da linha*/
+    transition: width 0.5s ease; /*para fazer a transição da largura da linha*/
+}
+
+.menu-link:hover::after{
+    width: 100%;
+}
+
+/* ======================================= inicio ======================================== */
+.cabecalho{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /*para centralizar o conteúdo*/
+    align-items: center; /*para centralizar o conteúdo verticalmente*/
+    flex-direction: column; /*para colocar os itens em coluna*/
+
+}
+.foto-perfil{
+    width: 200px;
+    height: 200px;
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+    border-radius: 50%; /* vai deixar ele redondo */
+    border: 4px solid var var(--vidro); /*grossura da borda*/
+    animation: flutuar 3s ease-in-out infinite; /*para fazer a animação de flutuar*/
+}
+
+h1{
+    font-size: 3.5rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 20px; /*espaçamento entre o título e a foto*/
+}
+
+.cabecalho-sub-titulo{
+    font-size: 1.5rem;
+    color: var(--claro);
+}
+/* =============================================== Sobre mim ========================================================= */
+.sobre{
+padding: 6rem 2rem; /*espaçamento interno da seção*/
+}
+.sobre-titulo{
+    font-size: 3rem;
+    color: var(--claro);
+    text-align: center; /*para centralizar o título*/
+    margin-bottom: 1.2rem; /*espaçamento entre o título e a caixa*/
+}
+
+.sobre-caixa{
+    padding: 2rem; /*espaçamento interno da caixa*/
+    max-width: 800px; /*largura da caixa não passará disso*/
+    margin: 0 auto; /*para centralizar a caixa*/
+    border-radius: 16px; /*para deixar as bordas arredondadas*/
+    border: 1px solid var(--vidro); /*para deixar uma borda fina e transparente*/
+    backdrop-filter: blur(10px); /*para deixar o fundo desfocado ou esfumaçado*/
+    background-color: rgba(255, 255, 255, 0.05);
+
+}
+.sobre-paragrafo{
+    text-align: center;
+    font-size: 1.2rem; /*tamanho da fonte do parágrafo*/
+}
+/* =============================================== Projetos ========================================================= */
+
+
+
+.projetos-titulo{
+    text-align: center; 
+    font-size: 2.5rem;
+}
+.projetos-card:hover{
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+    transform: translateY(-10px) scale(1.03); /*para dar um efeito de elevação ao passar o mouse*/
+}
+.projetos-caixa{
+    display: grid; /*para colocar os itens em grid*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*"grid-template-columns"vai criar colunas / "repeat" elas vão se repetir / "auto-fit" vão se ajustar automaticamente / "minmax" minimo que vai ter e maximo que vai ter*/
+    gap: 2rem; /*espaçamento entre os itens*/
+    padding: 2rem; /*espaçamento interno da seção*/
+    max-width: 1200px; /*largura máxima da seção*/  
+    margin: 0 auto; /*para centralizar a seção*/
+    
+}
+
+.caixa-textos-projeto{
+    padding: 1.5rem; /*espaçamento interno da caixa*/
+}
+
+.projetos-card{
+ background: rgba(255, 255, 255, 0.1);
+ border-radius: 16px; /*para deixar as bordas arredondadas*/
+ backdrop-filter: blur(10px); /*para deixar o fundo desfocado ou esfumaçado*/
+ border: solid 1px var(--vidro); /*para deixar uma borda fina e transparente*/
+ overflow: hidden; /*para não deixar a imagem vazar do card*/
+ transition: all 0.3s ease; /*para fazer a transição de todos os efeitos*/
+
+}
+
+.projetos-imagem{
+height: 200px; /*altura da imagem*/
+width: 100%; /*largura da imagem*/
+object-fit: cover; /*para a imagem cobrir todo o espaço disponível, respeitando o tamanho que atribuimos*/
+cursor: pointer;
+}
+.link-pag{
+margin-top: 20px;
+font-weight: 500;
+color: var(--primaria);
+text-decoration: none;
+}
+.link-pag:hover{
+    transition: color 0.3s ease;
+    color: var(--secundaria);
+}
+
+.paragrafo-projetos{
+    color: rgb(226, 232, 240, 0.8); /*para deixar o texto mais claro e transparente*/
+    line-height: 1.25rem;
+    
+}
+
+/* ========================================== formulario ================================================== */
+.contatos{
+padding: 6rem 2rem;
+}
+
+.contatos-titulo{
+    text-align: center; 
+    font-size: 2.5rem;
+}
+.formulario-contato{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem; /*espaçamento interno do formulário*/ 
+    backdrop-filter: blur(5px); /*para deixar o fundo desfocado ou esfumaçado*/
+    background: rgba(255, 255, 255, 0.1);
+    border: solid 1px var(--vidro);
+    border-radius: 16px;
+
+    
+}
+
+.campo-form{
+width: 100%; /*para ocupar toda a largura do formulário*/
+padding: 1rem;  
+background: rgba(255, 255, 255, 0.1);
+border-radius: 8px;
+color: var(--claro);
+border: 1px solid var(--vidro); /*para deixar uma borda fina e transparente*/
+outline: none; /*para tirar o contorno do campo ao clicar*/
+
+}
+
+.grupo-form{
+    margin-bottom: 1.5rem;
+    
+
+}
+.botao-form{
+    width: 100%;
+    color: var(--claro);
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria)); /*para fazer o gradiente da linha*/
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer; 
+    transition: all 0.2s ease;
+       
+}
+
+.botao-form:hover{
+        transform: translateY(-10px) scale(1.03); /*para dar um efeito de elevação ao passar o mouse*/
+        box-shadow: 0 5px 15px rgba(79, 70, 229, 0.3);
+}
+
+.particulas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5; /*para deixar as partículas mais transparentes*/
+    background:
+    radial-gradient(circle at 10% 20%, var(--primaria) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, var(--secundaria) 0%, transparent 20%),
+    var(--maisEscuro)
+    ;
+}
+
+@keyframes flutuar{
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
